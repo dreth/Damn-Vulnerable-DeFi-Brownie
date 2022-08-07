@@ -23,12 +23,12 @@ def test_solve_challenge():
 
     # set balance of sources accounts
     for address in sources:
-        set_account_balance_hardhat(address, hex(ether_to_wei(2)))
+        set_account_balance_network(address, hex(ether_to_wei(2)))
         # check sources balances
         assert web3.eth.get_balance(address) == ether_to_wei(2)
 
     # make the attacker balance 0.1 ETH
-    set_account_balance_hardhat(attacker.address, hex(ether_to_wei(0.1)))
+    set_account_balance_network(attacker.address, hex(ether_to_wei(0.1)))
     # check attacker balance
     assert attacker.balance() == ether_to_wei(0.1)
 

@@ -29,7 +29,7 @@ def test_solve_challenge():
     uniswap_factory = load_contract_from_abi_and_bytecode('UniswapV1Factory', None, None, load_path='built_helper_contracts/build-uniswap-v1/UniswapV1Factory.json')
 
     # set attacker balance to 25 ETH
-    set_account_balance_hardhat(attacker.address, hex(ether_to_wei(25)))
+    set_account_balance_network(attacker.address, hex(ether_to_wei(25)))
     # check attacker balance
     assert attacker.balance() == ATTACKER_INITIAL_ETH_BALANCE
 

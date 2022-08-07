@@ -13,7 +13,7 @@ def test_solve_challenge():
     deployer, _fromDeployer, proposer, _fromProposer, sweeper, _fromSweeper, attacker, _fromAttacker = define_from_acc(qty=4)
 
     # set attacker balance to 0.1 ETH
-    set_account_balance_hardhat(attacker.address, hex(ether_to_wei(0.1)))
+    set_account_balance_network(attacker.address, hex(ether_to_wei(0.1)))
     # check attacker balance
     assert attacker.balance() == ether_to_wei(0.1)
 

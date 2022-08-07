@@ -1,13 +1,16 @@
 from decimal import Decimal
 from email.policy import default
-from brownie import accounts, chain, Contract, ZERO_ADDRESS, project, config
+from brownie import accounts, chain, Contract, ZERO_ADDRESS, project, config, network
 import json
 from pathlib import Path
 
 # import web3 if necessary
 def import_web3():
     from web3 import Web3
-    return Web3(Web3.HTTPProvider(f"http://localhost:8545"))
+    if network.show_active() == 'anvil':
+        return Web3(Web3.HTTPProvider(f"http://127.0.0.1:8545"))
+    elif network.show_active() == 'hardhat':
+        return Web3(Web3.HTTPProvider(f"http://localhost:8545"))
 
 # redefine _from and acc for local use
 def define_from_acc(start=0, qty=10):
@@ -25,10 +28,7 @@ def define_from_acc(start=0, qty=10):
 # ether to wei convert, even if there's no web3 instance
 def ether_to_wei(value):
     web3 = import_web3()
-    if web3:
-        return web3.toWei(value, 'ether')
-    else:
-        return value*int(Decimal(repr(1e18)))
+    return web3.toWei(value, 'ether')
 
 # value dict for txs
 def value_dict(value, unit='wei'):
@@ -37,10 +37,10 @@ def value_dict(value, unit='wei'):
     if unit=='ether':
         return {'value': ether_to_wei(value)}
 
-# set specific account's balance to a specified value using "hardhat_setBalance"
-def set_account_balance_hardhat(account, value):
+# set specific account's balance to a specified value using "network_setBalance"
+def set_account_balance_network(account, value):
     web3 = import_web3()
-    return web3.provider.make_request('hardhat_setBalance', [account, value])
+    return web3.provider.make_request(f'{network.show_active()}_setBalance', [account, value])
 
 # rad contract abi and bytecode from a json file
 def load_abi_and_bytecode_json(json_file_path):
@@ -82,13 +82,3 @@ def load_contract_from_abi_and_bytecode(contract_name, abi, bytecode, load_path=
     # return contract
     contract_address = web3.eth.wait_for_transaction_receipt(tx_hash).contractAddress
     return Contract.from_abi(contract_name, contract_address, abi=abi)
-
-# load contract from dependencies
-def load_contract_from_deps(contract_name):
-    contract_imports = {
-        'GnosisSafe':1,
-        'GnosisSafeProxyFactory':1
-    }
-    print(f'project.load("{Path.home()}/.brownie/packages/{config["dependencies"][contract_imports[contract_name]]}").{contract_name}')
-    return eval(f'project.load("{Path.home()}/.brownie/packages/{config["dependencies"][contract_imports[contract_name]]}").{contract_name}')
-

@@ -21,7 +21,7 @@ def test_solve_challenge():
     deployer, _fromDeployer, attacker, _fromAttacker, buyer, _fromBuyer = define_from_acc(qty=3)
 
     # set attacker balance
-    set_account_balance_hardhat(attacker.address, hex(ether_to_wei(0.5)))
+    set_account_balance_network(attacker.address, hex(ether_to_wei(0.5)))
     # check attacker balance
     assert attacker.balance() == ether_to_wei(0.5)
 
