@@ -19,7 +19,7 @@ def test_solve_challenge():
 
     # Deploy the vault behind a proxy using the UUPS pattern,
     # passing the necessary addresses for the `ClimberVault::initialize(address,address,address)` function
-    ERC1967ProxyABI, ERC1967ProxyBytecode = load_abi_and_bytecode_json('contracts/build-erc-1967-proxy/ERC1967Proxy.json')
+    ERC1967ProxyABI, ERC1967ProxyBytecode = load_abi_and_bytecode_json('built_helper_contracts/build-erc-1967-proxy/ERC1967Proxy.json')
     vault = ClimberVault.deploy(_fromDeployer)
     initialization_data = vault.initialize.encode_input(deployer.address, proposer.address, sweeper.address)
     proxy = load_contract_from_abi_and_bytecode('ERC1967Proxy', ERC1967ProxyABI, ERC1967ProxyBytecode, constructor_params=[(vault.address, 'address'), (initialization_data, 'bytes')])

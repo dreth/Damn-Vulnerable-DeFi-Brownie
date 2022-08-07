@@ -31,9 +31,9 @@ def test_solve_challenge():
     token = DamnValuableToken.deploy(_fromDeployer)
 
     # get UniV2 contracts ABI and bytecode
-    factoryABI, factoryBytecode = load_abi_and_bytecode_json('contracts/build-uniswap-v2/UniswapV2Factory.json')
-    routerABI, routerBytecode = load_abi_and_bytecode_json('contracts/build-uniswap-v2/UniswapV2Router02.json')
-    pairABI, pairBytecode = load_abi_and_bytecode_json('contracts/build-uniswap-v2/UniswapV2Pair.json')
+    factoryABI, factoryBytecode = load_abi_and_bytecode_json('built_helper_contracts/build-uniswap-v2/UniswapV2Factory.json')
+    routerABI, routerBytecode = load_abi_and_bytecode_json('built_helper_contracts/build-uniswap-v2/UniswapV2Router02.json')
+    pairABI, pairBytecode = load_abi_and_bytecode_json('built_helper_contracts/build-uniswap-v2/UniswapV2Pair.json')
 
     # load UniV2 contracts
     uniswap_factory = load_contract_from_abi_and_bytecode('UniswapV2Factory', factoryABI, factoryBytecode, constructor_params=[(ZERO_ADDRESS, 'address')])

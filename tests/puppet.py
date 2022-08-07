@@ -24,9 +24,9 @@ def test_solve_challenge():
     deployer, _fromDeployer, attacker, _fromAttacker = define_from_acc(qty=2)
 
     # load uniswap contracts from ABI
-    UniswapV1ExchangeABI, UniswapV1ExchangeBytecode = load_abi_and_bytecode_json('contracts/build-uniswap-v1/UniswapV1Exchange.json')
+    UniswapV1ExchangeABI, UniswapV1ExchangeBytecode = load_abi_and_bytecode_json('built_helper_contracts/build-uniswap-v1/UniswapV1Exchange.json')
     exchange_template = load_contract_from_abi_and_bytecode('UniswapV1Exchange', UniswapV1ExchangeABI, UniswapV1ExchangeBytecode)
-    uniswap_factory = load_contract_from_abi_and_bytecode('UniswapV1Factory', None, None, load_path='contracts/build-uniswap-v1/UniswapV1Factory.json')
+    uniswap_factory = load_contract_from_abi_and_bytecode('UniswapV1Factory', None, None, load_path='built_helper_contracts/build-uniswap-v1/UniswapV1Factory.json')
 
     # set attacker balance to 25 ETH
     set_account_balance_hardhat(attacker.address, hex(ether_to_wei(25)))

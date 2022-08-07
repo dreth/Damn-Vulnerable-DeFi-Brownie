@@ -24,9 +24,9 @@ def test_solve_challenge():
     assert attacker.balance() == ether_to_wei(20)
 
     # get UniV2 contracts ABI and bytecode
-    factoryABI, factoryBytecode = load_abi_and_bytecode_json('contracts/build-uniswap-v2/UniswapV2Factory.json')
-    routerABI, routerBytecode = load_abi_and_bytecode_json('contracts/build-uniswap-v2/UniswapV2Router02.json')
-    pairABI, pairBytecode = load_abi_and_bytecode_json('contracts/build-uniswap-v2/UniswapV2Pair.json')
+    factoryABI, factoryBytecode = load_abi_and_bytecode_json('built_helper_contracts/build-uniswap-v2/UniswapV2Factory.json')
+    routerABI, routerBytecode = load_abi_and_bytecode_json('built_helper_contracts/build-uniswap-v2/UniswapV2Router02.json')
+    pairABI, pairBytecode = load_abi_and_bytecode_json('built_helper_contracts/build-uniswap-v2/UniswapV2Pair.json')
 
     # deploy tokens to be traded
     token = DamnValuableToken.deploy(_fromDeployer)

@@ -19,8 +19,8 @@ def test_solve_challenge():
     fromUsers = [_fromAlice, _fromBob, _fromCharlie, _fromDavid]
 
     # load Gnosis contracts from ABI and bytecode
-    GnosisSafeABI, GnosisSafeBytecode = load_abi_and_bytecode_json('contracts/build-gnosis-safe/GnosisSafe.json')
-    GnosisSafeProxyFactoryABI, GnosisSafeProxyFactoryBytecode = load_abi_and_bytecode_json('contracts/build-gnosis-safe/GnosisSafeProxyFactory.json')
+    GnosisSafeABI, GnosisSafeBytecode = load_abi_and_bytecode_json('built_helper_contracts/build-gnosis-safe/GnosisSafe.json')
+    GnosisSafeProxyFactoryABI, GnosisSafeProxyFactoryBytecode = load_abi_and_bytecode_json('built_helper_contracts/build-gnosis-safe/GnosisSafeProxyFactory.json')
 
     # Deploy Gnosis Safe master copy and factory contracts
     master_copy = load_contract_from_abi_and_bytecode('GnosisSafe', GnosisSafeABI, GnosisSafeBytecode)
