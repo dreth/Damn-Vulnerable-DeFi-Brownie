@@ -1,5 +1,5 @@
 from scripts.helper.utils import *
-from brownie import DamnValuableToken, TrusterLenderPool
+from brownie import DamnValuableToken
 
 def test_solve_challenge():
     ####################################################################

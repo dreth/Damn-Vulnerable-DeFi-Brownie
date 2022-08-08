@@ -36,7 +36,7 @@ def test_solve_challenge():
     # deploy other contracts
     token = DamnValuableToken.deploy(_fromDeployer)
     uniswap_factory.initializeFactory(exchange_template.address, _fromDeployer)
-    tx = uniswap_factory.createExchange(token.address, _fromDeployer | {'gasLimit':int(1e6)})
+    tx = uniswap_factory.createExchange(token.address, _fromDeployer)
     uniswap_exchange = Contract.from_abi('UniswapV1Exchange', tx.events['NewExchange']['exchange'], UniswapV1ExchangeABI)
 
     # deploy lending pool
@@ -44,10 +44,10 @@ def test_solve_challenge():
 
     # add initial token and ETH liquidity to pool
     token.approve(uniswap_exchange.address, UNISWAP_INITIAL_TOKEN_RESERVE, _fromDeployer)
-    uniswap_exchange.addLiquidity(0, UNISWAP_INITIAL_TOKEN_RESERVE, web3.eth.get_block('latest')['timestamp'] * 2, _fromDeployer | value_dict(UNISWAP_INITIAL_ETH_RESERVE) | {'gasLimit':int(1e6)})
+    uniswap_exchange.addLiquidity(0, UNISWAP_INITIAL_TOKEN_RESERVE, web3.eth.get_block('latest')['timestamp'] * 2, _fromDeployer | value_dict(UNISWAP_INITIAL_ETH_RESERVE))
 
     # ensure the exchange is working as expected
-    assert uniswap_exchange.getTokenToEthInputPrice(ether_to_wei(1), _fromDeployer | {'gasLimit':int(1e6)}) == calculate_token_to_eth_input_price(ether_to_wei(1), UNISWAP_INITIAL_TOKEN_RESERVE, UNISWAP_INITIAL_ETH_RESERVE)
+    assert uniswap_exchange.getTokenToEthInputPrice(ether_to_wei(1), _fromDeployer) == calculate_token_to_eth_input_price(ether_to_wei(1), UNISWAP_INITIAL_TOKEN_RESERVE, UNISWAP_INITIAL_ETH_RESERVE)
 
     # transfer initial tokens to attacker and pool
     token.transfer(attacker.address, ATTACKER_INITIAL_TOKEN_BALANCE, _fromDeployer)

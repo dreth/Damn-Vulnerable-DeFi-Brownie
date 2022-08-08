@@ -35,13 +35,15 @@ The code for each contract is under `contracts`, just like in the original chall
 
 To solve the challenges:
 
-1. Make sure that you can use the hardhat or anvil networks. You'll need to install hardhat or anvil. This is rather easy to do and you can follow the steps outlined in [this article of the brownie docs](https://eth-brownie.readthedocs.io/en/stable/install.html#using-brownie-with-hardhat). 
+1. Fork this repository or download its contents and copy them to one of your own
 
-2. Run one of the tests (or open the brownie console) so that brownie downloads/installs and compiles all required contracts that are required to compile those within the repo. If everything works fine, you don't need to do anything else. For me, however, during compilation, some contracts from the libraries required minimal modifications to work as intended, as a result, I made a simple script in the root directory of the repo (`fix_libs.py`) that will apply those changes to the scripts after brownie installs them.
+2. Make sure that you can use the hardhat or anvil networks. You'll need to install hardhat or anvil. This is rather easy to do and you can follow the steps outlined in [this article of the brownie docs](https://eth-brownie.readthedocs.io/en/stable/install.html#using-brownie-with-hardhat). 
 
-3. Go under `tests` to each challenge and write your transactions under script section marked with `SOLUTION GOES HERE`. Do not modify the code before each solution, as that's the initial setup for each challenge.
+3. Run one of the tests (or open the brownie console) so that brownie downloads/installs and compiles all required contracts that are required to compile those within the repo. If everything works fine, you don't need to do anything else. For me, however, during compilation, some contracts from the libraries required minimal modifications to work as intended, as a result, I made a simple script in the root directory of the repo (`fix_libs.py`) that will apply those changes to the scripts after brownie installs them.
 
-4. Run each test with:
+4. Go under `tests` to each challenge and write your transactions under script section marked with `SOLUTION GOES HERE`. Do not modify the code before each solution, as that's the initial setup for each challenge.
+
+5. Run each test with:
 
 ```
 brownie test tests/test_script_name.py --network network
@@ -54,7 +56,7 @@ Where:
 
 **Note: If you want to use Anvil, I only managed to get it to work with brownie versions _after_ 1.19.0, as of writing this, that's the latest version of brownie, to implement some fixes that allow Anvil to work well, you should just install [via setuptools while in the master branch of the repo](https://github.com/eth-brownie/brownie#via-setuptools).**
 
-5. If all tests pass, you've successfully solved the challenge.
+6. If all tests pass, you've successfully solved the challenge.
 
 ## If you find a mistake
 
