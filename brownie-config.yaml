@@ -21,4 +21,4 @@ networks:
   default: development
   development:
     max_fee: 1000000001
-    priority_fee: 1
+    priority_fee: 1000000000
