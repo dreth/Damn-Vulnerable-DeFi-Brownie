@@ -9,7 +9,7 @@ def import_web3():
     from web3 import Web3
     if network.show_active() == 'anvil':
         return Web3(Web3.HTTPProvider(f"http://127.0.0.1:8545"))
-    elif network.show_active() == 'hardhat':
+    else:
         return Web3(Web3.HTTPProvider(f"http://localhost:8545"))
 
 # redefine _from and acc for local use
