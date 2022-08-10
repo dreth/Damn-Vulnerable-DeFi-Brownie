@@ -41,6 +41,7 @@ def test_solve_challenge():
             receiver_contract.executeFlashLoan(10, _fromSomeUser)
         except:
             assert True
+            return
         assert False
 
 # ######################################################### 
