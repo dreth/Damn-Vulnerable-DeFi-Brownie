@@ -37,8 +37,11 @@ def test_solve_challenge():
         ############################################
 
         # It is no longer possible to execute flash loans
-        loanTx = receiver_contract.executeFlashLoan(10, _fromSomeUser)
-        assert False if loanTx else True
+        try:
+            receiver_contract.executeFlashLoan(10, _fromSomeUser)
+        except:
+            assert True
+        assert False
 
 # ######################################################### 
 # There's a lending pool with a million DVT tokens in balance, offering flash loans for free.
