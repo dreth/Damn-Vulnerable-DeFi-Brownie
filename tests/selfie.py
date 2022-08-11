@@ -44,9 +44,9 @@ def test_solve_challenge():
 # You start with no DVT tokens in balance, and the pool has 1.5 million. Your objective: take them all.
 # #########################################################
 
-    #############################
-    ##### SOLUTION GOES HERE ####
-    #############################
+    ##############################
+    ##### SOLUTION GOES HERE #####
+    ##############################
     
     ######################
     check_solution()

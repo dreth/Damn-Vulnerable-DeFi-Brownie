@@ -75,9 +75,9 @@ def test_solve_challenge():
 # Starting with 25 ETH and 1000 DVTs in balance, you must steal all tokens from the lending pool. 
 # #########################################################
 
-    #############################
-    ##### SOLUTION GOES HERE ####
-    #############################
+    ##############################
+    ##### SOLUTION GOES HERE #####
+    ##############################
     
     ######################
     check_solution()

@@ -71,9 +71,9 @@ def test_solve_challenge():
 # Your goal is to take all funds from the registry. In a single transaction. 
 # #########################################################
 
-    #############################
-    ##### SOLUTION GOES HERE ####
-    #############################
+    ##############################
+    ##### SOLUTION GOES HERE #####
+    ##############################
     
     ######################
     check_solution()

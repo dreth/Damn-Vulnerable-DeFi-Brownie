@@ -82,9 +82,9 @@ def test_solve_challenge():
 # You start with 20 ETH and 10000 DVT tokens in balance. The new lending pool has a million DVT tokens in balance. You know what to do ;) 
 # #########################################################
 
-    #############################
-    ##### SOLUTION GOES HERE ####
-    #############################
+    ##############################
+    ##### SOLUTION GOES HERE #####
+    ##############################
     
     ######################
     check_solution()

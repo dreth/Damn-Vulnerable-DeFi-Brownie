@@ -50,9 +50,9 @@ def test_solve_challenge():
 # Drain all ETH funds from the user's contract. Doing it in a single transaction is a big plus ;) 
 # #########################################################
 
-    #############################
-    ##### SOLUTION GOES HERE ####
-    #############################
+    ##############################
+    ##### SOLUTION GOES HERE #####
+    ##############################
     
     ######################
     check_solution()

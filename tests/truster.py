@@ -41,9 +41,9 @@ def test_solve_challenge():
 # But don't worry, you might be able to take them all from the pool. In a single transaction.
 # #########################################################
 
-    #############################
-    ##### SOLUTION GOES HERE ####
-    #############################
+    ##############################
+    ##### SOLUTION GOES HERE #####
+    ##############################
     
     ######################
     check_solution()

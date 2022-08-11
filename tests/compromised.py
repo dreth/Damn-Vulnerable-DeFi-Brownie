@@ -81,9 +81,9 @@ def test_solve_challenge():
 # Starting with only 0.1 ETH in balance, you must steal all ETH available in the exchange.
 # #########################################################
 
-    #############################
-    ##### SOLUTION GOES HERE ####
-    #############################
+    ##############################
+    ##### SOLUTION GOES HERE #####
+    ##############################
     
     ######################
     check_solution()
