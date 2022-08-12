@@ -1,8 +1,5 @@
-from decimal import Decimal
-from email.policy import default
-from brownie import accounts, chain, Contract, ZERO_ADDRESS, project, config, network
+from brownie import accounts, Contract, ZERO_ADDRESS, network
 import json
-from pathlib import Path
 
 # import web3 if necessary
 def import_web3():
