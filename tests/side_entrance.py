@@ -31,7 +31,7 @@ def test_solve_challenge():
         ############################################
 
         assert pool.balance() == 0
-        assert attacker.balance() >= ATTACKER_INITIAL_ETH_BALANCE
+        assert attacker.balance() > ATTACKER_INITIAL_ETH_BALANCE
 
 # #########################################################
 # A surprisingly simple lending pool allows anyone to deposit ETH, and withdraw it at any point in time.
