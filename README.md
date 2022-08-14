@@ -54,7 +54,7 @@ Where:
 * `test_script_name` is the name of your test script for each challenge
 * `network` after the `--network` flag is either `hardhat` or `anvil`
 
-**Note: If you want to use Anvil, I only managed to get it to work with brownie versions _after_ 1.19.0, as of writing this, that's the latest version of brownie, to implement some fixes that allow Anvil to work well, you should just install [via setuptools while in the master branch of the repo](https://github.com/eth-brownie/brownie#via-setuptools).**
+**Note**: If you want to use Anvil, I only managed to get it to work with brownie versions _after_ 1.19.0, as of writing this, that's the latest version of brownie, to implement some fixes that allow Anvil to work well, you should just install [via setuptools while in the master branch of the repo](https://github.com/eth-brownie/brownie#via-setuptools). Anvil is really fast and nice to use, so I preferred using it.
 
 6. If all tests pass, you've successfully solved the challenge.
 
