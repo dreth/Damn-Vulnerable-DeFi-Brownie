@@ -65,7 +65,7 @@ def test_solve_challenge():
 
         # Attacker has taken all tokens from the pool
         assert token.balanceOf(lending_pool.address) == 0
-        assert token.balanceOf(attacker.address) == POOL_INITIAL_TOKEN_BALANCE
+        assert token.balanceOf(attacker.address) > POOL_INITIAL_TOKEN_BALANCE
 
 # #########################################################
 # There's a huge lending pool borrowing Damn Valuable Tokens (DVTs), where you first need to deposit twice the borrow amount in ETH as collateral. The pool currently has 100000 DVTs in liquidity.
