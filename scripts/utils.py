@@ -28,8 +28,8 @@ def ether_to_wei(value):
     return web3.toWei(value, 'ether')
 
 # wei to ether convert
-def wei_to_ether(value):
-    return value // int(1e18)
+def wte(value):
+    return value / int(1e18)
 
 # value dict for txs
 def value_dict(value, unit='wei'):
