@@ -6,9 +6,7 @@ Given how unfamiliar (at first) the ethers.js syntax was for me despite knowing 
 
 This was a challenge in itself to familiarize myself a little better with the ethers.js/hardhat syntax and how it works in general by establishing parallels to brownie, which I had become familiarized with through solving the [Ethernaut](https://dac.ac/blog/ethernaut_solutions/) and [Capture the ether](https://dac.ac/blog/capture_the_ether_solutions/) challenges.
 
-This repo can be used by anyone to solve the challenges using brownie tests. However, given my lack of unit testing experience, scripts have felt a little more familiar for other CTFs, as a result, [I also made a repo like this one to use brownie scripts](https://github.com/dreth/DamnVulnerableDeFiBrownie). Still, the code is pretty much the same as in this repo, but it uses scripts.
-
-I will keep this repo and the repo that uses tests with no solutions, so that anyone can use them.
+This repo does NOT contain any solutions.
 
 **If you find an error, please post an issue or open a PR. I would really appreciate it**
 
