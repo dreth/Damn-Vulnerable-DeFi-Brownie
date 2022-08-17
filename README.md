@@ -58,4 +58,4 @@ Where:
 
 ## If you find a mistake
 
-Once again, if you see a mistake in the code, **please open an issue or a PR**. I'm not an expert by any stretch of the imagination and I'm still learning. I wanted to make this so anyone that prefers or wishes to use brownie+hardhat or brownie+anvil over ethers+hardhat tests can solve these challenges (including myself), despite this, I still recommend using the original repo to solve the challenges if you can.
+Once again, if you see a mistake in the code, **please open an issue or a PR**. I'm not an expert by any stretch of the imagination and I'm still learning. I wanted to make this so anyone that prefers or wishes to use brownie+hardhat or brownie+anvil over ethers+hardhat tests can solve these challenges (including myself), despite this, I still recommend using the [original repo](https://github.com/tinchoabbate/damn-vulnerable-defi) to solve the challenges if you can.
