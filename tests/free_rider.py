@@ -79,7 +79,7 @@ def test_solve_challenge():
     assert marketplace.amountOfOffers() == 6
 
     # Deploy buyer's contract, adding the attacker as the partner
-    buyer_contract = FreeRiderBuyer.deploy(attacker.address, nft.address, _fromDeployer | value_dict(BUYER_PAYOUT))
+    buyer_contract = FreeRiderBuyer.deploy(attacker.address, nft.address, _fromBuyer | value_dict(BUYER_PAYOUT))
 
     # check if solved
     def check_solution():
